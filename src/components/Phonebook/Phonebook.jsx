@@ -2,6 +2,7 @@ import { Component } from "react";
 import ContactForm from "../ContactForm";
 import ContactList from "../ContactList";
 import Filter from "../Filter";
+import PropTypes from 'prop-types';
 
 class Phonebook extends Component {
     state = {
@@ -71,3 +72,9 @@ class Phonebook extends Component {
 };
 
 export default Phonebook;
+
+Phonebook.propTypes = {
+    contacts: PropTypes.array,
+    filter: PropTypes.string.isRequired,
+}
+

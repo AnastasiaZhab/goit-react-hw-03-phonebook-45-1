@@ -1,5 +1,6 @@
-import s from './ContactList.module.css'
-
+import s from './ContactList.module.css';
+import PropTypes from 'prop-types';
+    
 const ContactList = ({ list, onRemove }) => {
     return (<ul>
         {list.map(({ id, name, number }) => (
@@ -13,3 +14,9 @@ const ContactList = ({ list, onRemove }) => {
 };
 
 export default ContactList;
+
+ContactList.propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+}
