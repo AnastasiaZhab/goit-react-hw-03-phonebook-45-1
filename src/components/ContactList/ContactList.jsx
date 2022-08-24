@@ -1,13 +1,10 @@
-import s from './ContactList.module.css';
 import PropTypes from 'prop-types';
+import ContactListItem from './ContactListItem/ContactListItem';
     
 const ContactList = ({ list, onRemove }) => {
     return (<ul>
         {list.map(({ id, name, number }) => (
-            <li key={id}>
-                <span>{name}</span> - <span>{number}</span>
-                <button className={s.button} onClick={() => onRemove({ id })}>Remove</button>
-            </li>
+            <ContactListItem key={id} name={name} number={number} onRemove={onRemove} />
         ))}
         </ul>
     )
