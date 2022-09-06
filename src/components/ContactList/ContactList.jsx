@@ -3,8 +3,8 @@ import ContactListItem from './ContactListItem/ContactListItem';
     
 const ContactList = ({ list, onRemove }) => {
     return (<ul>
-        {list.map(({ id, name, number }) => (
-            <ContactListItem key={id} name={name} number={number} onRemove={onRemove} />
+        {list.map((list) => (
+            <ContactListItem list={list} onRemove={onRemove}/>
         ))}
         </ul>
     )
@@ -13,7 +13,6 @@ const ContactList = ({ list, onRemove }) => {
 export default ContactList;
 
 ContactList.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
+    list: PropTypes.array.isRequired,
+    onRemove: PropTypes.func.isRequired,
 }

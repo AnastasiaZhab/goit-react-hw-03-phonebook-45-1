@@ -40,10 +40,13 @@ class Phonebook extends Component {
         )
     };
 
-    handleRemoveContact = ({ id }) => {
-        this.setState((prevState) => ({
-            contacts: prevState.contacts.filter((contact) => contact.id !== id)
-        }))
+    handleRemoveContact = (event) => {
+        
+        const {name} = event.target;
+        const { contacts } = this.state;
+        this.setState(
+            {contacts: contacts.filter((contact) => contact.id !== name)
+            })
     };
 
     handleChangeFilter = (e) => this.setState({ filter: e.target.value });
